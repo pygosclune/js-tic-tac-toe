@@ -1,12 +1,25 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    background-color: #121212;
 }
-  
+
+.main-heading {
+    color: #fefefe;
+    margin-bottom: 4rem;
+}
+
 #game-container {
     text-align: center;
 }
@@ -19,12 +32,13 @@ body {
 .square {
     width: 100px;
     height: 100px;
-    font-size: 24px;
+    font-size: 1.5rem;
     cursor: pointer;
     border: 2px solid #333;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fefefe;
 }
 
 #status {
@@ -32,12 +46,20 @@ body {
 }
 
 #result {
-    font-size: 18px;
+    color: #fefefe;
+    margin-bottom: 1rem;
 }
 
 #restart-btn {
-    font-size: 16px;
+    font-size: 1.5rem;
     padding: 5px 10px;
     cursor: pointer;
+    font-family: inherit;
+    background-color: #96E6B3;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    outline: none;
+    appearance: none;
 }
   

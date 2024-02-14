@@ -49,7 +49,7 @@ const DisplayController = (() => {
     if (!gameEnded && Gameboard.markSpot(index, currentPlayer.marker)) {
       renderBoard();
       if (checkWinner()) {
-        updateResult(`${currentPlayer.name} wins!`);
+        updateResult(`${currentPlayer.name} (${currentPlayer.marker}) wins!`);
         gameEnded = true;
       } else if (Gameboard.getBoard().every((spot) => spot !== '')) {
         updateResult('It\'s a tie!');
@@ -82,6 +82,7 @@ const DisplayController = (() => {
   };
 
   const restartGame = () => {
+    gameEnded = false;
     Gameboard.resetBoard();
     renderBoard();
     updateResult('');
@@ -92,7 +93,7 @@ const DisplayController = (() => {
 
   const player1 = Player('Player 1', 'X');
   const player2 = Player('Player 2', 'O');
-  currentPlayer = player1;
+  let currentPlayer = player1;
 
   renderBoard(); // Initial rendering
 })();
